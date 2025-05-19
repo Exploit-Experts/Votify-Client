@@ -1,0 +1,26 @@
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap');
+
+:root {
+  --bg-color: #291F1E;
+  --text-color: #E4D6D4;
+  --primary-color: #523936;
+  --secondary-color: #FFC482;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 1em 2.5em !important;
+  font-weight: 400;
+  font-family: "Inter", sans-serif, Helvetica;
+
+  @media screen and (max-width: 30em) {
+    padding: 1em 1.0em !important;
+  }
+}

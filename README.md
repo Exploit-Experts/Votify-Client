@@ -1,1 +1,1 @@
-# Votify-Client
+# VotifyClient

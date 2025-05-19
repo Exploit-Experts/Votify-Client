@@ -1,0 +1,39 @@
+.footer {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 0.875rem;
+  margin-bottom: 2em;
+  margin-top: 2em;
+
+  hr {
+    color: var(--text-color);
+  }
+
+  .contact-section {
+    margin: 1em 0 2em 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: var(--text-color);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    i {
+      font-size: 1.2rem;
+      color: var(--bg-color);
+      background-color: var(--text-color);
+      padding: 0.4rem;
+      border-radius: 25px;
+    }
+
+    .about-content {
+      display: flex;
+    }
+
+    .social-icons {
+      display: flex;
+    }
+  }
+}

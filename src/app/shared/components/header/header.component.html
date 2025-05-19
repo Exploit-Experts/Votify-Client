@@ -5,6 +5,15 @@
         <span>VOTIFY</span>
       </a>
     </ng-template>
-    <ng-template #end> </ng-template>
+    <ng-template #end>
+      <button class="role">
+        <i class="pi pi-book"></i>
+        {{ UserRole}}
+      </button>
+      <button class="user">
+        <i class="pi pi-user"></i>
+        {{ UserName}}
+      </button>
+    </ng-template>
   </p-menubar>
 </header>

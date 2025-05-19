@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '@core/config/environment';
 import { AuthCredentials } from '@core/models/auth.model';
+import { User } from '@core/models/user.model';
 
 
 @Injectable({
@@ -26,6 +27,14 @@ export class AuthService {
         }
       })
     );
+  }
+
+  personalInfo(): Observable<User> {
+    return this.http.get<User>(`${this.API_URL}/me`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.getToken()}`
+      })
+    });
   }
 
   logout(): void {

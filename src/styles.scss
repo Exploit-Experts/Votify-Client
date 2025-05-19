@@ -1,11 +1,11 @@
 @import "primeicons/primeicons.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap");
 
 :root {
-  --bg-color: #291F1E;
-  --text-color: #E4D6D4;
+  --bg-color: #291f1e;
+  --text-color: #e4d6d4;
   --primary-color: #523936;
-  --secondary-color: #FFC482;
+  --secondary-color: #ffc482;
 }
 
 * {
@@ -21,6 +21,6 @@ body {
   font-family: "Inter", sans-serif, Helvetica;
 
   @media screen and (max-width: 30em) {
-    padding: 1em 1.0em !important;
+    padding: 1em 1em !important;
   }
 }

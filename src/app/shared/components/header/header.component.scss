@@ -22,7 +22,13 @@ p-menubar {
   }
 }
 
-.role, .user {
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.role,
+.user {
   font-size: 1rem;
   border: none;
   font-weight: 600;
@@ -32,4 +38,76 @@ p-menubar {
   text-align: center;
   margin-right: 1rem;
   border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo span {
+    font-size: 2rem;
+  }
+
+  .user-info {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+
+  .role,
+  .user {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    margin-bottom: 1rem;
+  }
+
+  p-menubar {
+    padding: 0 0.3rem;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .role,
+  .user {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    margin-right: 0.3rem;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .user-info {
+    flex-wrap: nowrap;
+  }
+
+  .role,
+  .user {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    margin-right: 0.2rem;
+  }
+
+  .pi {
+    margin-right: 0.2rem;
+  }
 }

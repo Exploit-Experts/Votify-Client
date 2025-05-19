@@ -15,7 +15,7 @@ export const routes: Routes = [
     component: MainComponent,
   },
   {
-    path: 'sections',
+    path: 'sessions',
     canActivate: [authGuard],
     component: SectionPageComponent,
   },

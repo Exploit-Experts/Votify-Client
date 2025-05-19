@@ -6,7 +6,6 @@ import { environment } from '@core/config/environment';
 import { AuthCredentials } from '@core/models/auth.model';
 import { User } from '@core/models/user.model';
 
-
 @Injectable({
   providedIn: 'root'
 })

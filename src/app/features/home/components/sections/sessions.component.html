@@ -1,8 +1,9 @@
-<app-header></app-header>
-<app-hero></app-hero>
 <main>
   <div class="header">
     <h2>Seções</h2>
+    <button class="btn" [routerLink]="['/sessions']">
+      <i class="pi pi-objects-column"></i> Ver todas as seções
+    </button>
   </div>
 
   <app-section-card
@@ -10,4 +11,3 @@
     [session]="session"
   ></app-section-card>
 </main>
-<app-footer></app-footer>

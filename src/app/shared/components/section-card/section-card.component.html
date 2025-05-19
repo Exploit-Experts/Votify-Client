@@ -1,0 +1,33 @@
+<div class="section-card" *ngIf="session">
+  <div class="header">
+    <h3 class="title">{{ session.title }}</h3>
+    <span class="date">{{ session.start_date | date }}</span>
+  </div>
+  <div class="organizer"> Organizador: {{ session.organizer.name }}</div>
+  <div class="description">{{ session.description }}</div>
+
+  <div class="agendas-container">
+    <div class="agendas-list">
+      <div class="agenda-item" *ngFor="let agenda of session.agendas">
+        <div class="agenda-title">{{ agenda.title }}</div>
+        <div class="agenda-votes" *ngIf="agenda.informationVotes">
+          <span class="total"
+            >Total: {{ agenda.informationVotes.totalVotes }}</span
+          >
+          <span class="approvals"
+            >Aprovados: {{ agenda.informationVotes.approvals }}</span
+          >
+          <span class="rejects"
+            >Rejeitados: {{ agenda.informationVotes.rejects }}</span
+          >
+        </div>
+      </div>
+      <div
+        class="agenda-item empty"
+        *ngIf="!session.agendas || session.agendas.length === 0"
+      >
+        <div class="agenda-title">Sem agendas disponíveis</div>
+      </div>
+    </div>
+  </div>
+</div>

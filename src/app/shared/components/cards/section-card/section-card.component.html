@@ -1,0 +1,95 @@
+<div class="section-card" *ngIf="session">
+  <div class="header">
+    <div class="header-content">
+      <div class="title-container">
+        <h3 class="title" *ngIf="!isEditing">{{ session.title }}</h3>
+        <input
+          *ngIf="isEditing"
+          class="title-input"
+          [(ngModel)]="session.title"
+          placeholder="Título"
+          aria-label="Título da sessão"
+        />
+        <div class="action-buttons" *ngIf="canEditSession">
+          <ng-container *ngIf="!isEditing">
+            <button
+              class="icon-btn"
+              (click)="editSession()"
+              title="Editar"
+              aria-label="Editar sessão"
+            >
+              <i class="pi pi-pencil"></i>
+            </button>
+            <button
+              class="icon-btn"
+              (click)="deleteSession()"
+              title="Excluir"
+              aria-label="Excluir sessão"
+            >
+              <i class="pi pi-trash"></i>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="isEditing">
+            <button
+              class="icon-btn"
+              (click)="saveEdit()"
+              title="Salvar"
+              aria-label="Salvar edições"
+            >
+              <i class="pi pi-check"></i>
+            </button>
+            <button
+              class="icon-btn"
+              (click)="cancelEdit()"
+              title="Cancelar"
+              aria-label="Cancelar edições"
+            >
+              <i class="pi pi-times"></i>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <span class="date"
+      >{{ session.start_date | date }} - {{ session.end_date | date }}</span
+    >
+  </div>
+  <div class="organizer">Organizador: {{ session.organizer.name }}</div>
+  <div class="description" *ngIf="!isEditing">
+    {{ session.description }}
+  </div>
+  <div *ngIf="isEditing && canEditSession">
+    <textarea
+      [(ngModel)]="session.description"
+      rows="3"
+      class="edit-description"
+      placeholder="Descrição da sessão"
+      aria-label="Descrição da sessão"
+    ></textarea>
+  </div>
+
+  <div class="agendas-container">
+    <div class="agendas-list">
+      <div class="agenda-item" *ngFor="let agenda of session.agendas">
+        <div class="agenda-title">{{ agenda.title }}</div>
+        <div class="agenda-votes" *ngIf="agenda.informationVotes">
+          <span class="total"
+            >Total: {{ agenda.informationVotes.totalVotes }}</span
+          >
+          <span class="approvals"
+            >Aprovados: {{ agenda.informationVotes.approvals }}</span
+          >
+          <span class="rejects"
+            >Rejeitados: {{ agenda.informationVotes.rejects }}</span
+          >
+        </div>
+      </div>
+      <div
+        class="agenda-item empty"
+        *ngIf="!session.agendas || session.agendas.length === 0"
+      >
+        <div class="agenda-title">Sem agendas disponíveis</div>
+      </div>
+    </div>
+  </div>
+</div>

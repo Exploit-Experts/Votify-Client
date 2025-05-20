@@ -9,5 +9,8 @@
   <app-section-card
     *ngFor="let session of sessions"
     [session]="session"
-  ></app-section-card>
+    (sessionUpdated)="onSessionUpdated()"
+    (sessionDeleted)="onSessionDeleted($event)"
+  >
+  </app-section-card>
 </main>

@@ -13,3 +13,53 @@
     height: 2.2rem;
   }
 }
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+}
+
+::ng-deep {
+  .session-dialog-container {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+
+    .p-dialog-header {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border-top-left-radius: 12px !important;
+      border-top-right-radius: 12px !important;
+      padding: 1.25rem !important;
+    }
+
+    .p-dialog-content {
+      background-color: var(--primary-color);
+      border-bottom-left-radius: 12px !important;
+      border-bottom-right-radius: 12px !important;
+      padding: 0 !important;
+    }
+  }
+
+  .session-dialog-mask {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-dialog-mask {
+    transition: background-color 0.2s;
+  }
+}

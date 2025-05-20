@@ -3,11 +3,23 @@
 <main>
   <div class="header">
     <h2>Seções</h2>
+    <button
+      pButton
+      *ngIf="canCreateSession"
+      class="p-button-rounded p-button-primary"
+      icon="pi pi-plus"
+      (click)="openSessionDialog()"
+      aria-label="Criar nova seção"
+      title="Criar nova seção"
+    ></button>
   </div>
 
   <app-section-card
     *ngFor="let session of sessions"
     [session]="session"
-  ></app-section-card>
+    (sessionUpdated)="onSessionUpdated()"
+    (sessionDeleted)="onSessionDeleted($event)"
+  >
+  </app-section-card>
 </main>
 <app-footer></app-footer>

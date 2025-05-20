@@ -1,0 +1,104 @@
+<div class="session-dialog">
+  <form [formGroup]="sessionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input
+        type="text"
+        pInputText
+        id="title"
+        formControlName="title"
+        placeholder="Digite o título da sessão"
+        class="w-full"
+      />
+      <small
+        class="error-message"
+        *ngIf="
+          sessionForm.get('title')?.invalid && sessionForm.get('title')?.touched
+        "
+      >
+        Título é obrigatório (mínimo 3 caracteres)
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        rows="4"
+        placeholder="Digite a descrição da sessão"
+        class="w-full"
+      ></textarea>
+      <small
+        class="error-message"
+        *ngIf="
+          sessionForm.get('description')?.invalid &&
+          sessionForm.get('description')?.touched
+        "
+      >
+        Descrição é obrigatória (mínimo 10 caracteres)
+      </small>
+    </div>
+
+    <div class="date-container">
+      <div class="form-group">
+        <label for="start_date">Data de Início</label>
+        <p-calendar
+          formControlName="start_date"
+          [showTime]="true"
+          dateFormat="dd/mm/yy"
+          [showButtonBar]="true"
+          inputId="start_date"
+          styleClass="w-full"
+        ></p-calendar>
+        <small
+          class="error-message"
+          *ngIf="
+            sessionForm.get('start_date')?.invalid &&
+            sessionForm.get('start_date')?.touched
+          "
+        >
+          Data de início é obrigatória
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="end_date">Data de Término</label>
+        <p-calendar
+          formControlName="end_date"
+          [showTime]="true"
+          dateFormat="dd/mm/yy"
+          [showButtonBar]="true"
+          inputId="end_date"
+          styleClass="w-full"
+        ></p-calendar>
+        <small
+          class="error-message"
+          *ngIf="
+            sessionForm.get('end_date')?.invalid &&
+            sessionForm.get('end_date')?.touched
+          "
+        >
+          Data de término é obrigatória
+        </small>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button
+        pButton
+        type="button"
+        label="Cancelar"
+        class="p-button-secondary"
+        (click)="onCancel()"
+      ></button>
+      <button
+        pButton
+        type="submit"
+        label="Salvar"
+        [disabled]="sessionForm.invalid || submitting"
+        [loading]="submitting"
+      ></button>
+    </div>
+  </form>
+</div>

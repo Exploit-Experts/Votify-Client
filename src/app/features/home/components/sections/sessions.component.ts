@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Session } from '@core/models/session.model';
 import { SessionService } from '@core/services/session.service';
-import { SectionCardComponent } from '@shared/components/section-card/section-card.component';
-import { RouterModule } from '@angular/router';
+import { SectionCardComponent } from '@shared/components/cards/section-card/section-card.component';
 
 @Component({
   standalone: true,
@@ -18,6 +18,14 @@ export class SessionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSessions();
+  }
+
+  onSessionUpdated(): void {
+    this.loadSessions();
+  }
+
+  onSessionDeleted(sessionId: number): void {
+    this.sessions = this.sessions.filter((session) => session.id !== sessionId);
   }
 
   private loadSessions(): void {

@@ -37,7 +37,14 @@ export class SessionService {
   }
 
   updateSession(id: number, sessionData: any): Observable<any> {
-    return this.http.put(`${this.API_URL}/${id}`, sessionData, {
+    const updateData = {
+      title: sessionData.title,
+      description: sessionData.description,
+      start_date: sessionData.start_date,
+      end_date: sessionData.end_date,
+    };
+
+    return this.http.put(`${this.API_URL}/${id}`, updateData, {
       headers: this.getAuthHeaders(),
     });
   }

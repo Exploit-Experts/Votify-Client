@@ -43,11 +43,11 @@ export class SessionDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadCurrentUser();
     this.initForm();
+    this.loadUserInfo();
   }
 
-  private loadCurrentUser(): void {
+  loadUserInfo(): void {
     this.authService.personalInfo().subscribe({
       next: (user) => {
         this.currentUser = user;
@@ -68,6 +68,7 @@ export class SessionDialogComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(10)]],
       start_date: [tomorrow, Validators.required],
       end_date: [endDate, Validators.required],
+      organizer_id: ['', Validators.required],
     });
   }
 
@@ -81,7 +82,6 @@ export class SessionDialogComponent implements OnInit {
 
     const sessionData = {
       ...formValue,
-      organizer_id: this.currentUser.id,
     };
 
     this.sessionService.createSession(sessionData).subscribe({

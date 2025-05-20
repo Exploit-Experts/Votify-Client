@@ -40,6 +40,27 @@
       </small>
     </div>
 
+    <div class="form-group">
+      <label for="organizer_id">ID do Organizador</label>
+      <input
+        type="text"
+        pInputText
+        id="organizer_id"
+        formControlName="organizer_id"
+        placeholder="Digite o ID do organizador"
+        class="w-full"
+      />
+      <small
+        class="error-message"
+        *ngIf="
+          sessionForm.get('organizer_id')?.invalid &&
+          sessionForm.get('organizer_id')?.touched
+        "
+      >
+        ID do organizador é obrigatório
+      </small>
+    </div>
+
     <div class="date-container">
       <div class="form-group">
         <label for="start_date">Data de Início</label>

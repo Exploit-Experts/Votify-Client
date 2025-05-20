@@ -35,14 +35,6 @@ button {
     border-radius: 12px !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 
-    .p-dialog-header {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      border-top-left-radius: 12px !important;
-      border-top-right-radius: 12px !important;
-      padding: 1.25rem !important;
-    }
-
     .p-dialog-content {
       background-color: var(--primary-color);
       border-bottom-left-radius: 12px !important;

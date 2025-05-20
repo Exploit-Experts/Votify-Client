@@ -69,7 +69,6 @@ export class SectionPageComponent implements OnInit {
 
   openSessionDialog(): void {
     const config: DynamicDialogConfig = {
-      header: 'Nova Sessão',
       width: '500px',
       contentStyle: {
         'max-height': '80vh',

@@ -12,11 +12,7 @@ import { SessionsComponent } from "@features/home/components/sections/sessions.c
   styleUrl: './main.component.scss'
 })
 
-export class MainComponent implements OnInit {
+export class MainComponent {
   constructor() {}
-
-  ngOnInit(): void {
-    console.log('Main component initialized');
-  }
 
 }
